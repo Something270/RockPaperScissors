@@ -18,9 +18,30 @@ namespace RockPaperScissors
             int option = Convert.ToInt32(Console.ReadLine());
             return option;
         }
+        /// <summary>
+        /// Compara las opciones
+        /// </summary>
+        /// <param name="option">Es la opcion seleccionado por el jugadir</param>
+        /// <param name="aiOption">Es la opcion seleccionado por el AI</param>
+        static void CheckWinner(int option, int aiOption){
+            if(option == 1 & aiOption == 2){  //Piedra vs Papel
+                Console.WriteLine("Ai wins");
+            }
+            else if(option == 2 & aiOption == 3){ //Papel vs Tijeras
+                Console.WriteLine("Ai wins");
+            }
+            else if(option == 3 & aiOption == 1){ // tijera vs piedra
+                Console.WriteLine("Ai wins");
 
+            }
+                else if(option == aiOption){
+                Console.WriteLine("Tie");
+            }
 
-
+            else{
+                Console.WriteLine("Player wins");
+            }
+        }
         /// <summary>
         /// Selecciona aleatoriamente un opcion
         /// </summary>
@@ -42,9 +63,10 @@ namespace RockPaperScissors
 
             //TODO: La computadora genera su opción a jugar de manera aleatoria (piedra, papel o tijera)
             int aiOption = SelectRandom();
-            Console.WriteLine("Opcion seleccionada aleatoriamente:" + option);
+            Console.WriteLine("Opcion seleccionada aleatoriamente:" + aiOption);
             //TODO: Determinar quién ganó de acuerdo a las opciones seleccionadas, y mostrar al ganador
-            //TODO: Jugar 3 partidas, y mencionar quién ganó al final (jugador o computadora)
+
+            CheckWinner(option, aiOption);
         }
     }
 }
